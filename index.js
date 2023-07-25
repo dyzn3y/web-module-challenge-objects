@@ -88,7 +88,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 reviews.push({name: 'Brit', rating: 5, feedback: "this place is chill with really cool people, great for getting work done on weekdays"});
-console.log(reviews)
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that creates an object with name, rating, feedback, add the new review to the end of an array and returns the resulting array. 
@@ -161,9 +161,19 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(reviewsArray, rating) {
+    const newArray = [];
+    const maxRatingRange = rating + 1
+
+    reviewsArray.forEach(review => {
+      if (review.rating < maxRatingRange && review.rating >= rating)
+        newArray.push(review)
+    })
+
+    return newArray
   }
+
+  console.log('Stretch 1: ', getReviewByRating(reviews, 4))
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   

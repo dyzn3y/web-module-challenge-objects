@@ -189,9 +189,18 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
+function getLongReviews(reviewsArray) {
+    const resultArray = [];
+    reviewsArray.forEach(review => {
+      let feedback
+      feedback = review.feedback
+      feedback = feedback.split(' ');
+      feedback.length > 15 ? resultArray.push(review) : null 
+    })
+    return resultArray;
   }
+
+  console.log('Stretch 2: ', getLongReviews(reviews));
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 

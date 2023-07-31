@@ -221,11 +221,17 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
+function carMaker(odometer) {
+    const car = {
+      driveMethod: "drive",
+      odometer: odometer,
+      drive: odometer + 100
+    }
+    return car.drive
     
 }
 
+console.log('Stretch 3: ', carMaker(10));
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo(){
